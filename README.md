@@ -134,4 +134,4 @@ UMI() → mede umidade e aciona irrigação
 TMP36() → controla temperatura e relé
 
 Serial Monitor: exibe leituras contínuas dos sensores.
-```cpp
+
