@@ -46,7 +46,7 @@ O sistema é composto por **3 funções principais** que monitoram cada sensor e
 ---
 
 ### 🔆 1️⃣ Controle de Luz — `LDR()`
-
+````
   void LDR(){
   int leitura = analogRead(A0);
   if (leitura >= 250) {
@@ -56,7 +56,7 @@ O sistema é composto por **3 funções principais** que monitoram cada sensor e
     servo.write(0);
   }
 }
-
+````
 Mede a luminosidade no pino A0.
 Se a luz for forte (>=250):
 Gira o servo para 180° (fecha a janela/cortina);
@@ -64,12 +64,13 @@ Toca um som curto no buzzer.
 Se for fraca, o servo volta a 0° (abre a cortina).
 
 💧 2️⃣ Controle de Umidade — UMI()
+````
 void UMI(){
   float umidade = analogRead(A1);
   umidade = map(umidade, 0, 1023, 0, 100);
   ...
 }
-
+````
 
 Lê a umidade do solo no pino A1.
 
@@ -94,12 +95,13 @@ Quando muito úmido:
 Servo fecha (90°) e buzzer silencia.
 
 🌡️ 3️⃣ Controle de Temperatura — TMP36()
+````
 void TMP36(){
   float temperatura = analogRead(A2);
   temperatura = map(temperatura, 20, 358, -40, 125);
   ...
 }
-
+````
 
 Lê a temperatura via TMP36 (pino A2).
 
@@ -134,13 +136,3 @@ UMI() → mede umidade e aciona irrigação
 TMP36() → controla temperatura e relé
 
 Serial Monitor: exibe leituras contínuas dos sensores.
-````
-  void LDR(){
-  int leitura = analogRead(A0);
-  if (leitura >= 250) {
-    servo.write(180);
-    tone(buzzer, 1000, 300); // som curto indicando luz forte
-  } else {
-    servo.write(0);
-  }
-}
