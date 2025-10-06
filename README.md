@@ -136,3 +136,10 @@ UMI() → mede umidade e aciona irrigação
 TMP36() → controla temperatura e relé
 
 Serial Monitor: exibe leituras contínuas dos sensores.
+
+📊 Monitor Serial — Saída Exemplo
+````
+A leitura analogica do LDR e de: 380
+O solo esta 45% umido
+Temperatura atual: 24 °C
+````
